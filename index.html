@@ -1,4 +1,4 @@
-<html data-ng-app="searchApp"> 
+<html data-ng-app="testApp"> 
 <head>
 
 	<title data-ng-controller="urlController">Apartments, Houses in {{ absUrl | subString:'/':7 }} | Cozee
@@ -19,7 +19,7 @@
 	</div>
 
 	<div data-ng-controller="urlController">
-		<h1>URL Split : {{ absUrl | subString:'/':7 }}</h1>
+		<h1>URL Split : {{ absUrl | subString:'/':2 }}</h1>
 	</div>
 	
 	<hr>
@@ -31,23 +31,22 @@
 
 	<div data-ng-controller="jsonController">
 		<p>JSON content should display below here:</p>
-	    <pre>{{json}}</pre>
+	    <pre>userId : {{ userId }}</pre>
+	    <pre>title : {{ title }}</pre>
 	</div>
 
 
-	<!-- Local Scripts -->
-	<script type="text/javascript" src="controller/controllers.js" ></script>
-	<script type="text/javascript" src="services/factories.js" ></script>
-	<script type="text/javascript" src="services/services.js" ></script>
-
-
 	<!-- External Scripts -->
+	<script type="text/javascript" src="_scripts/angular.js"></script>
+	<script type="text/javascript" src="_scripts/angular-route.min.js" ></script>
 
-	<script type="text/javascript" src="angular.js"></script>
 
-	<script type="text/javascript" src="angular-route.min.js" ></script>
+	<!-- Local Scripts -->
+	<script type="text/javascript" src="_ng_main/main.js" ></script>
+	<script type="text/javascript" src="_ng_controllers/controllers.js" ></script>
+	<script type="text/javascript" src="_ng_directives/directives.js" ></script>
+	<script type="text/javascript" src="_ng_services/factories.js" ></script>
 
-	<script type="text/javascript" src="script.js" ></script>
-
+	
 </body>
 </html>

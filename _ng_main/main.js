@@ -4,21 +4,21 @@
 
 //	Module Declarations 
 
-	var searchApp = angular.module("searchApp", ['ngRoute']);
+	var testApp = angular.module("testApp", ['ngRoute']);
 
 //	============================================================================
 //	============================================================================
 
 //	Routes 
 
-	searchApp.config( function ($routeProvider) {
+	testApp.config( function ($routeProvider) {
 
 		$routeProvider
 
 			.when('/', {
 
 				controller : 'textController',
-				templateUrl : 'http://localhost/partial.html'
+				templateUrl : '/'
 
 			})
 
@@ -50,7 +50,7 @@
 
 //	Filter Call 
 
-	searchApp.filter(filters);
+	testApp.filter(filters);
 
 //	============================================================================
 //	============================================================================

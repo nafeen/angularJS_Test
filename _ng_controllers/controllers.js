@@ -19,17 +19,28 @@
 
 	controllers.urlController = function( $scope, $location ) {
 
-		// printing URL to the console
 		$scope.absUrl = $location.absUrl();
-		console.log($scope.absUrl);
+
+	};
+
+	controllers.jsonController = function ($scope, $http) {
+
+		$scope.json = 'Loading...';
+
+	    $http.get('http://jsonplaceholder.typicode.com/posts/1')
+	    	.success(function(data) {
+	        	$scope.json = '';
+	        	$scope.userId = data.userId;
+	        	$scope.title = data.title;
+	    	});
 
 	};
 
 
 // Controller Call
-	searchApp.controller(controllers);
+	testApp.controller(controllers);
 
-	searchApp.controller('ajaxController', ['$scope', 'factoryDB', function ($scope, factoryDB) {
+	testApp.controller('ajaxController', ['$scope', 'factoryDB', function ($scope, factoryDB) {
 
 		$scope.status;
 		$scope.customers;
@@ -49,13 +60,6 @@
 
 	}  ]);
 
-	searchApp.controller('jsonController', function ($scope, $http) {
-		$scope.json = 'Cities not yet loaded.';
-	    $http.get('http://localhost/cities.json')
-	      .success(function(data) {
-	        $scope.json = data;
-	      });
-	});
 
 //	============================================================================
 //	============================================================================

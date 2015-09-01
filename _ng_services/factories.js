@@ -7,13 +7,13 @@
 
 
 // Factory Definitions
-	searchApp.factory('factoryDB', ['$http', function ($http) {
+	testApp.factory('factoryDB', ['$http', function ($http) {
 
 		// create an AJAX call
 		// connect to DB
 		// pull listing information
 
-		var apiPath = '';
+		var apiPath = 'http://jsonplaceholder.typicode.com/posts/1';
 		var factoryDB = {};
 
 		factoryDB.getLeads = function () {
