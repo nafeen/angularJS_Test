@@ -2,31 +2,29 @@
 //	============================================================================
 //	============================================================================
 
-// Factory Declarations
+// 	Factory Declarations
 	var factories = {};
 
 
-// Factory Definitions
-	testApp.factory('factoryDB', ['$http', function ($http) {
-
-		// create an AJAX call
-		// connect to DB
-		// pull listing information
+// 	Factory Definitions
+	factories.factoryDB = function ($http) {
 
 		var apiPath = 'http://jsonplaceholder.typicode.com/posts/1';
 		var factoryDB = {};
 
-		factoryDB.getLeads = function () {
+		factoryDB.getData = function () {
+
 			return $http.get(apiPath);
+
 		};
 
 		return factoryDB;
 
-	}]);
+	};
 
-
-// Factory Call
 	
+//  Factory Call
+	testApp.factory(factories);
 
 //	============================================================================
 //	============================================================================

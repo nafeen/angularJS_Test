@@ -23,43 +23,35 @@
 
 	};
 
-	controllers.jsonController = function ($scope, $http) {
+	controllers.ajaxController = function ($scope, factoryDB) {
 
-		$scope.json = 'Loading...';
+	    $scope.data;
+	    $scope.status;
 
-	    $http.get('http://jsonplaceholder.typicode.com/posts/1')
-	    	.success(function(data) {
-	        	$scope.json = '';
-	        	$scope.userId = data.userId;
-	        	$scope.title = data.title;
-	    	});
+	    getData();
+
+	    function getData() {
+
+	        factoryDB.getData()
+
+	            .success(function (data) {
+
+	                $scope.data = data;
+
+	            })
+
+	            .error(function (error) {
+
+	                $scope.status = 'Unable to load data: ' + error.message;
+
+	            });
+	    }
 
 	};
 
 
 // Controller Call
 	testApp.controller(controllers);
-
-	testApp.controller('ajaxController', ['$scope', 'factoryDB', function ($scope, factoryDB) {
-
-		$scope.status;
-		$scope.customers;
-		$scope.orders;
-		
-		getLeads();
-
-	    function getLeads() {
-	        dataFactory.getLeads()
-	            .success(function (custs) {
-	                $scope.leads = custs;
-	            })
-	            .error(function (error) {
-	                $scope.status = 'Unable to load lead data: ' + error.message;
-	            });
-	    }
-
-	}  ]);
-
 
 //	============================================================================
 //	============================================================================

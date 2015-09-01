@@ -29,11 +29,13 @@
 	<div data-ng-view=""></div>
 
 
-	<div data-ng-controller="jsonController">
-		<p>JSON content should display below here:</p>
-	    <pre>userId : {{ userId }}</pre>
-	    <pre>title : {{ title }}</pre>
+	<div data-ng-controller="ajaxController">
+		<p>AJAX content should display below here:</p>
+	    <pre>AJAX : {{ data }}</pre>
+	    <!-- <pre>title : ajax - {{ title }} - ajax</pre> -->
 	</div>
+
+	<hr>
 
 
 	<!-- External Scripts -->
@@ -43,9 +45,9 @@
 
 	<!-- Local Scripts -->
 	<script type="text/javascript" src="_ng_main/main.js" ></script>
-	<script type="text/javascript" src="_ng_controllers/controllers.js" ></script>
 	<script type="text/javascript" src="_ng_directives/directives.js" ></script>
 	<script type="text/javascript" src="_ng_services/factories.js" ></script>
+	<script type="text/javascript" src="_ng_controllers/controllers.js" ></script>
 
 	
 </body>
