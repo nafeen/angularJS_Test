@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {   
+        "city": "Stockholm", 
+        "latitud": "59", 
+        "longitud": "18",
+        "id": "sthlm"
+    }, 
+    {
+        "city": "Göteborg", 
+        "latitud": "58", 
+        "longitud": "12",
+        "id": "gbg"
+    },
+    {
+        "city": "Malmö", 
+        "latitud": "55", 
+        "longitud": "13",
+        "id": "malmo"
+    },
+    {
+        "city": "Umeå", 
+        "latitud": "63", 
+        "longitud": "20",
+        "id": "umea"
+    }
+  ]
+}

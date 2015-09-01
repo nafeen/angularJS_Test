@@ -1,22 +1,53 @@
-<html data-ng-app="ngDesigners"> 
+<html data-ng-app="searchApp"> 
 <head>
-	<title>angularJSTestApp</title>
+
+	<title data-ng-controller="urlController">Apartments, Houses in {{ absUrl | subString:'/':7 }} | Cozee
+	</title>
+
 </head>
-<body data-ng-controller="ngController as main">
 
-<h4>{{main.hello}}</h4>
-
+<body>
 
 
-<!-- Scripts -->
+	<!-- INCLUDE HEADER -->
 
-<script type="text/javascript" 
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js">
-</script>
+	<div data-ng-controller="textController">
+		<h3>Concatenation : {{ item.name }} {{ item.description }}</h3>
 
-<script type="text/javascript"
-		src="angular.js" >
-</script>
+		<h3>subString Split : {{ item.description | subString:',':0}}</h3>
+
+	</div>
+
+	<div data-ng-controller="urlController">
+		<h1>URL Split : {{ absUrl | subString:'/':7 }}</h1>
+	</div>
+	
+	<hr>
+	
+
+	<!-- Placeholer for the views -->
+	<div data-ng-view=""></div>
+
+
+	<div data-ng-controller="jsonController">
+		<p>JSON content should display below here:</p>
+	    <pre>{{json}}</pre>
+	</div>
+
+
+	<!-- Local Scripts -->
+	<script type="text/javascript" src="controller/controllers.js" ></script>
+	<script type="text/javascript" src="services/factories.js" ></script>
+	<script type="text/javascript" src="services/services.js" ></script>
+
+
+	<!-- External Scripts -->
+
+	<script type="text/javascript" src="angular.js"></script>
+
+	<script type="text/javascript" src="angular-route.min.js" ></script>
+
+	<script type="text/javascript" src="script.js" ></script>
 
 </body>
 </html>
