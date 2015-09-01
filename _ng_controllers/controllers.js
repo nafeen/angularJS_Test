@@ -3,10 +3,13 @@
 //	============================================================================
 
 // Controller Declarations
+	
 	var controllers = {};
 
 
 // Controller Definitions
+
+	// this is simple text controller
 	controllers.textController = function( $scope ) {
 
 		$scope.hello = "Yo!";
@@ -17,41 +20,67 @@
 
 	};
 
+
+	// this is the controller that fetches URL
 	controllers.urlController = function( $scope, $location ) {
 
 		$scope.absUrl = $location.absUrl();
 
 	};
 
-	controllers.ajaxController = function ($scope, factoryDB) {
 
-	    $scope.data;
-	    $scope.status;
+	// this is the controller that fetches API data
+	controllers.ajaxController = function ($scope, factoryDB, serviceDB) {
 
-	    getData();
+		$scope.factorydata = 'Loading...';
+	    $scope.servicedata = 'Loading...';
 
-	    function getData() {
+	    getFactoryData();
+	    getServiceData();
 
-	        factoryDB.getData()
 
-	            .success(function (data) {
+	    function getFactoryData() {
 
-	                $scope.data = data;
+	        factoryDB.getFactoryData()
+
+	            .success(function (factorydata) {
+
+	                $scope.factorydata = factorydata;
 
 	            })
 
 	            .error(function (error) {
 
-	                $scope.status = 'Unable to load data: ' + error.message;
+	                $scope.factorydata = 'Unable to load data: ' + error.message;
 
 	            });
 	    }
 
+
+	    function getServiceData() {
+
+	        serviceDB.getServiceData()
+
+	            .success(function (servicedata) {
+
+	                $scope.servicedata = servicedata;
+
+	            })
+
+	            .error(function (error) {
+
+	                $scope.servicedata = 'Unable to load data: ' + error.message;
+
+	            });
+	    }
+	    
 	};
 
 
-// Controller Call
+//  Controller Call
+	
 	testApp.controller(controllers);
+
 
 //	============================================================================
 //	============================================================================

@@ -2,32 +2,29 @@
 //	============================================================================
 //	============================================================================
 
-// 	Factory Declarations
+//	Services Declarations 
 	
-	var factories = {};
+	var services = {};
 
 
-// 	Factory Definitions
-	
-	factories.factoryDB = function ($http) {
+//	Services Definitions
+
+	services.serviceDB = function ($http) {
 
 		var apiPath = 'http://jsonplaceholder.typicode.com/posts/1';
-		var factoryDB = {};
 
-		factoryDB.getFactoryData = function () {
+		this.getServiceData = function () {
 
 			return $http.get(apiPath);
 
 		};
-
-		return factoryDB;
 
 	};
 
 	
 //  Factory Call
 	
-	testApp.factory(factories);
+	testApp.service(services);
 
 
 //	============================================================================

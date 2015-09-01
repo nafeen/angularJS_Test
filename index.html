@@ -1,15 +1,13 @@
 <html data-ng-app="testApp"> 
 <head>
 
-	<title data-ng-controller="urlController">Apartments, Houses in {{ absUrl | subString:'/':7 }} | Cozee
+	<title data-ng-controller="urlController">{{ absUrl | subString:'/':3 }}
 	</title>
 
 </head>
 
 <body>
 
-
-	<!-- INCLUDE HEADER -->
 
 	<div data-ng-controller="textController">
 		<h3>Concatenation : {{ item.name }} {{ item.description }}</h3>
@@ -31,8 +29,8 @@
 
 	<div data-ng-controller="ajaxController">
 		<p>AJAX content should display below here:</p>
-	    <pre>AJAX : {{ data }}</pre>
-	    <!-- <pre>title : ajax - {{ title }} - ajax</pre> -->
+	    <pre>AJAX from factory : {{ factorydata }}</pre>
+	    <pre>AJAX from service : {{ servicedata }}</pre>
 	</div>
 
 	<hr>
@@ -47,6 +45,7 @@
 	<script type="text/javascript" src="_ng_main/main.js" ></script>
 	<script type="text/javascript" src="_ng_directives/directives.js" ></script>
 	<script type="text/javascript" src="_ng_services/factories.js" ></script>
+	<script type="text/javascript" src="_ng_services/services.js" ></script>
 	<script type="text/javascript" src="_ng_controllers/controllers.js" ></script>
 
 	

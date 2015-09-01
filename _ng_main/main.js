@@ -34,7 +34,7 @@
 	var filters = {};
 
 
-//	Filter Definitions 
+//	Custom-filter Definitions 
 
 	filters.subString = function () {
 
@@ -48,7 +48,7 @@
 	};
 
 
-//	Filter Call 
+//	Custom-filter Call 
 
 	testApp.filter(filters);
 
